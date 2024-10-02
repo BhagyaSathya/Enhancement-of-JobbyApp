@@ -193,12 +193,12 @@ class Jobs extends Component {
     if (isChecked) {
       this.setState(
         prev => ({locations: [...prev.locations, locationId]}),
-        this.getJobs,
+        () => this.getJobs(),
       )
     } else {
       this.setState(
         prev => ({locations: prev.locations.filter(loc => loc !== locationId)}),
-        this.getJobs,
+        () => this.getJobs(),
       )
     }
   }
@@ -225,7 +225,8 @@ class Jobs extends Component {
               getJobs={this.getJobs}
               changeSalary={this.changeSalary}
               changeEmployeeList={this.changeEmployeeList}
-              changeLocation={this.changeLocation} // Pass changeLocation function
+              changeLocation={this.changeLocation}
+              locations={this.state.locations}
             />
             <div className="search-input-jobs-list-container">
               <div className="search-input-container-desktop">

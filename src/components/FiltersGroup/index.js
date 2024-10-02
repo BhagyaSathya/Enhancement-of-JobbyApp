@@ -10,10 +10,10 @@ const locationsList = [
 ]
 
 const FiltersGroup = props => {
-  const onChangeLocation = event => {
-    const {changeLocation} = props
-    changeLocation(event.target.value, event.target.checked)
-  }
+  const onChangeLocation = (event) => {
+  const { changeLocation } = props;
+  changeLocation(event.target.value, event.target.checked);
+};
 
   const onChangeSearchInput = event => {
     const {changeSearchInput} = props
